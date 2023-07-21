@@ -1,0 +1,163 @@
+// Temporary Plane
+// const plane = new THREE.Mesh(
+//     new THREE.PlaneGeometry(100, 100, 10, 10),
+//     new THREE.MeshStandardMaterial({
+//         color: 0xFFFFFF,
+//         }));
+// plane.castShadow = false;
+// plane.receiveShadow = true;
+// plane.rotation.x = -Math.PI / 2;
+// this._scene.add(plane);
+
+
+// class CharacterController {
+//     constructor() {
+//         this._input = new CharacterControlInput();
+//         this._stateMachine =  new FiniteStateMachine(new CharacterControllerProxy(this));
+
+//     }
+// }
+
+// class CharacterControlInput {
+//     constructor() {
+//         this._Init();
+//     }
+
+//     _Init(){
+//         this._keys = {
+//             forward: false,
+//             backward: false,
+//             left: false,
+//             right: false,
+//             space: false,
+//             shift: false
+//         };
+//         document.addEventListener('keydown', (e) => this._onKeyDown(e), false)
+//         document.addEventListener('keyup', (e) => this._onKeyUp(e), false)
+//     }
+
+//     _onKeyDown(event) {
+//         switch (event.keyCode) {
+            
+//             case 87: //w
+//                 console.log('adcmad')
+//                 this._move.foward = true;
+//                 break;
+//             case 65: //a
+//                 this._move.left =  true;
+//                 break;
+//             case 83: //s
+//                 this._move.backward =  true;
+//                 break;
+//             case 68: //d
+//                 this._move.right =  true;
+//                 break;
+//             case 32: //space
+//                 this._keys.space = true;
+//                 break;
+//             case 16: // shift
+//                 this._keys.shift = true;
+//                 break;
+//             case 38: // up
+//             case 37: // left
+//             case 40: // down
+//             case 39: // right
+//         }
+//     }
+
+//     _onKeyUp(event) {
+//         switch (event.keyCode) {
+//             case 87: //w
+//                 this._move.foward = false;
+//                 break;
+//             case 65: //a
+//                 this._move.left =  false;
+//                 break;
+//             case 83: //s
+//                 this._move.backward =  false;
+//                 break;
+//             case 68: //d
+//                 this._move.right =  false;
+//                 break;
+//             case 32: //space
+//                 this._keys.space = true;
+//                 break;
+//             case 16: // shift
+//                 this._keys.shift = true;
+//                 break;
+//             case 38: // up
+//             case 37: // left
+//             case 40: // down
+//             case 39: // right
+//         }
+//     }
+// }
+
+// class FiniteStateMachine {
+//     constructor() {
+//         this._states = {};
+//         this._currentState = null;
+//     }
+
+//     _AddState(name,type) {
+//         this._states[name] = type;
+//     }
+
+//     SetState (name) {
+//         const prevState = this._currentState;
+
+//         if (prevState) {
+//             if (prevState.Name == name){
+//                 return;
+//             }
+//             prevState.Exit();
+//         }
+        
+//         const state = new this._states[name](this);
+
+//         this._currentState = state;
+//         state.Enter(prevState);
+//     }
+
+//     Update(timeElapsed, input) {
+//         if (this._currentState){
+//             this._currentState.Update(timeElapsed,input);
+//         }
+//     }
+    
+// }
+
+
+  // Update(timeInSeconds) {
+    //     const velocity = this._velocity;
+    //     const frameDecceleration = new THREE.Vector3(
+    //         velocity.x * this._deceleration.x,
+    //         velocity.y * this._deceleration.y,
+    //         velocity.z * this._deceleration.z
+    //     );
+
+    //     frameDecceleration.multiplyScalar(timeInSeconds);
+    //     frameDecceleration.z = Math.sign(frameDecceleration.z) * Math.min(
+    //         Math.abs(frameDecceleration.z), Math.abs(velocity.z)
+    //     );
+
+    //     velocity.add(frameDecceleration);
+
+    //     const controlObject = this._params.target;
+    //     const_Q = new THREE.Quaternion();
+    //     const_A = new THREE.Vector3();
+    //     const_R = controlObject.quaternion.clone();
+
+    //     if (this._move.foward) {
+    //         velocity.z += this._acceleration.z * timeInSeconds;
+    //     }
+    //     if (this._move.backward) {
+            
+    //     }
+    // }
+
+
+    // Temporary Feature: Adds Camera Control
+        // const controls = new OrbitControls(this._camera, this._threejs.domElement);
+        // controls.target.set(0, 0, 0);
+        // controls.update();
