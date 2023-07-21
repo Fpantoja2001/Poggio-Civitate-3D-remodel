@@ -2,11 +2,11 @@
   "name": "final-project-stuff",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
-  "homepage": "https://fpantoja2001.github.io/example",
+  "main": "dist/main.js",
+  "homepage": "https://fpantoja2001.github.io/Poggio-Civitate-3D-remodel/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d"
   },
   "author": "",
   "license": "ISC",
