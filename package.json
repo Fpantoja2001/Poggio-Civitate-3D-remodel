@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "homepage": "https://fpantoja2001.github.io/example",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  
   },
   "author": "",
   "license": "ISC",
