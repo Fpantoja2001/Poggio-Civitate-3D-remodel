@@ -13,6 +13,14 @@
 <body>
     <script src="main.js" type="module"></script>
     <link rel="stylesheet" type="text/css" href="styles.scss" />
+    <script type="importmap">
+		{
+			"imports": {
+				"three": "../build/three.module.js",
+				"three/addons/": "./jsm/"
+			}
+		}
+		</script>
 
     <div class="controlHolder">
         <div class="actualControls">
