@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 const KEYS = {
     'a': 65,
@@ -283,7 +283,7 @@ const KEYS = {
   
     initializeScene_() {
         const loader = new GLTFLoader();
-        loader.load('/assets/mapModel/SiteModelv1.glb', (gltf) => {
+        loader.load('./models/SiteModelv1.glb', (gltf) => {
             this.scene_.add(gltf.scene)
         })
 

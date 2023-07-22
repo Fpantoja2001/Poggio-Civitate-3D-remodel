@@ -6,6 +6,9 @@
   "homepage": "https://fpantoja2001.github.io/Poggio-Civitate-3D-remodel/index/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
