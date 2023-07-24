@@ -3,9 +3,9 @@ export default {
 }
 
 module.exports = {
-    root: './',
+    root: './public',
     build: {
-        outDir: 'dist',
+        outDir: '../dist',
     },
     publicDir: 'assets'
  } 
