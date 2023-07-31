@@ -20,7 +20,7 @@ Capsule - https://threejs.org/docs/#api/en/geometries/CapsuleGeometry | CapsuleG
 
 ## How this program works: 
 
-The 3D models are created on blender (by me) and loaded into the program using gltf loader. Moving around in the world works via taking user input from keys on their keyboard {w a s d space} and applying that as transformations on the 3D vector that is the users position. Looking around works by taking the users trackpad / mouse movements and turning that as a roatation of the the users camera. This program is then all bundled using vite and hosted with gh-pages.
+The 3D models are created on blender (by me) and loaded into the program using gltf loader. Moving around in the world works via taking user input from keys on their keyboard **{w a s d space}** and applying that as transformations on the 3D vector that is the users position. Looking around works by taking the users trackpad / mouse movements and turning that as a roatation of the the users camera. This program is then all bundled using vite and hosted with gh-pages.
 
 ## How to run this program: 
 
