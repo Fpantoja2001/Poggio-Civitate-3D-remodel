@@ -1,5 +1,32 @@
 *{
-    cursor: none;
+    cursor: crosshair;
+}
+
+.xhair {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+}
+
+.examplePopup {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    background-color: aqua;
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    bottom: 20%;
+    display: none;
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
 
 .controlHolder {
@@ -8,7 +35,7 @@
     height: 100px;
     bottom: 100px;
     right: 100px;
-    
+
     .actualControls {
         position: relative;
         width: 100%;
@@ -67,5 +94,22 @@
 
 .active {
     background-color: red !important;
-    
+}
+
+.activePopup  {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    background-color: aqua;
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    bottom: 20%;
+    display: block;
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
