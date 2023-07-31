@@ -425,7 +425,7 @@ function teleportPlayerIfOob() {
     // playerCollider.end.set( 0, 5, 0 );
     playerCollider.start.set(0,3,-3)
     playerCollider.end.set(0,3,-3)
-    playerCollider.radius = 0.35;
+    playerCollider.radius = 1;
     camera.position.copy( playerCollider.end );
     camera.rotation.set( 0, 0, 0 );
 
