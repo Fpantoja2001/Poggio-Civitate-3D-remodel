@@ -1,5 +1,5 @@
 # Poggio-Civitate-3D-remodel
-Date: Mon, July 31st 2023__
+Date: Mon, July 31st 2023 <br>
 Author: Felix Manuel Pantoja Tejada
 
 ## Reason for project:
@@ -13,10 +13,10 @@ stumble into my same position in the future.
 
 ## Libraries:
 
-Three.JS - https://threejs.org/ | Three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL.
-GLTF Loader - https://threejs.org/docs/#examples/en/loaders/GLTFLoader | glTF (GL Transmission Format) is an open format specification for efficient delivery and loading of 3D content.
-Octree - https://vorg.github.io/pex/docs/pex-geom/Octree.html | 3D Three data structure for fast spatial point indexing
-Capsule - https://threejs.org/docs/#api/en/geometries/CapsuleGeometry | CapsuleGeometry is a geometry class for a capsule with given radii and height.
+Three.JS - https://threejs.org/ | Three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL. <br>
+GLTF Loader - https://threejs.org/docs/#examples/en/loaders/GLTFLoader | glTF (GL Transmission Format) is an open format specification for efficient delivery and loading of 3D content.<br>
+Octree - https://vorg.github.io/pex/docs/pex-geom/Octree.html | 3D Three data structure for fast spatial point indexing. <br>
+Capsule - https://threejs.org/docs/#api/en/geometries/CapsuleGeometry | CapsuleGeometry is a geometry class for a capsule with given radii and height. <br>
 
 ## How this program works: 
 
