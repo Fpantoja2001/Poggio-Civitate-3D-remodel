@@ -24,7 +24,7 @@ The 3D models are created on blender (by me) and loaded into the program using g
 
 ## How to run this program: 
 
-This program is hosted with gh-pages at the following [link]https://fpantoja2001.github.io/Poggio-Civitate-3D-remodel/.
+This program is hosted with gh-pages at the following [link](https://fpantoja2001.github.io/Poggio-Civitate-3D-remodel/).
 
 ## package.json:
 ```
