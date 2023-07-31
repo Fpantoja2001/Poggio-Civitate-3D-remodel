@@ -57,3 +57,4 @@ This program is hosted with gh-pages at the following [link](https://fpantoja200
 * Embedded document.eventListener on mousedown activates on all mousedown events after its first call, when it should only activate if the desired object is intersected via raycatser. 
 * **esc + w a s or d**, sends character infinitely in direction of last button pressed.
 * Upon death capsule respawns slighlty lower to the ground. 
+
