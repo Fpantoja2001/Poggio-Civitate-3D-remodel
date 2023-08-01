@@ -147,13 +147,31 @@ container.addEventListener( 'mousedown', () => {
 
 document.addEventListener( 'mouseup', () => {
 
-  //Hello
+  triggerObjectEvent()
 
 } );
 
 function triggerObjectEvent() {
-  console.log('hello')
+  const intersects2 = rayCaster.intersectObject(scene.children[2])
+
+  console.log(intersects2)
+  
+  if (intersects2.length > 0){
+    document.getElementsByClassName('examplePopup')[0].classList.add('activePopup')
+    document.exitPointerLock()
+
+
+
+  }
+
+  // document.getElementById('buttonExit').addEventListener('onclick', function(){
+  //   document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
+  //   document.body.requestPointerLock() 
+  // })
+
 }
+
+const rayCaster = new THREE.Raycaster();
 
 document.body.addEventListener( 'mousemove', ( event ) => {
   
@@ -169,37 +187,33 @@ document.body.addEventListener( 'mousemove', ( event ) => {
 
   }
 
-  const rayCaster = new THREE.Raycaster();
-
   rayCaster.setFromCamera(pointer,camera)
 
-  
-
-  
-
   // const intersects = rayCaster.intersectObject(scene.children[3])
-  const intersects2 = rayCaster.intersectObject(scene.children[2])
+  
   // console.log(scene.children)
 
-  if (intersects2.length > 0){
+  // if (intersects2.length > 0){
 
-    document.body.addEventListener('mousedown', () => {
-      let run = true
+  //   document.body.addEventListener('mousedown', () => {
+  //     let run = true
 
-      if (run) {
-        triggerObjectEvent()
-        run = false
-      }
+  //     if (run) {
+  //       triggerObjectEvent()
+  //       run = false
+  //     }
       
-    }, {once:true})
-  }
+  //   }, {once:true})
+  // }
 
-  // function applyOpac (){
+  function applyOpac (){
 
-  //   if (intersects2.length > 0){
-  //     intersects2[0].object.material.transparent = true;
-  //     intersects2[0].object.material.opacity = 0.5;s
-  //   }
+    const intersects2 = rayCaster.intersectObject(scene.children[2])
+
+    if (intersects2.length > 0){
+      intersects2[0].object.material.transparent = true;
+      intersects2[0].object.material.opacity = 0.5;
+    }
   //   console.log(intersects2)
 
   //   document.addEventListener('mousedown', () => {
@@ -238,7 +252,7 @@ document.body.addEventListener( 'mousemove', ( event ) => {
   //   //     })
   //   //   }
   //   // }
-  // }
+  }
 
 
     function removeOpac (){
@@ -252,8 +266,8 @@ document.body.addEventListener( 'mousemove', ( event ) => {
       }
     }
   
-  // removeOpac()
-  // applyOpac()
+  removeOpac()
+  applyOpac()
   
 
 });

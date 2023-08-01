@@ -63,3 +63,7 @@ This program is hosted with gh-pages at the following [link](https://fpantoja200
 * Remake of viewing and movement module.
 * Remake of physics collision module.
 * Create flawless interaction module.
+
+## Things I've tried to do 
+* Implement a physics module with Cannon.js
+* Implement a physics module with Ammo.js
