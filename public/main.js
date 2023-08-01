@@ -8,6 +8,8 @@ import { Octree } from 'three/addons/math/Octree.js';
 
 import { Capsule } from 'three/addons/math/Capsule.js';
 
+import {CSS2DRenderer} from 'three/addons/renderers/CSS2DRenderer';
+
 
 const clock = new THREE.Clock();
 
@@ -74,30 +76,21 @@ const vector1 = new THREE.Vector3();
 const vector2 = new THREE.Vector3();
 const vector3 = new THREE.Vector3();
 
+const labelRenderer = new CSS2DRenderer()
+labelRenderer.setSize(window.innerWidth,window.innerHeight)
+labelRenderer.domElement.style.position = 'absolute';
+labelRenderer.domElement.style.top = '0px';
+labelRenderer.domElement.style.pointerEvents = 'none';
+document.body.appendChild(labelRenderer.domElement)
 
-const geometry = new THREE.PlaneGeometry(7,7);
+
+const geometry = new THREE.PlaneGeometry(3.62,3.62);
 const material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 const plane = new THREE.Mesh( geometry, material );
 plane.name = 'Board'
-plane.position.set(0,6.2,-0.2)
+plane.position.set(0,3.1,-.35)
 scene.add( plane );
 playerCollider.start.set(0,3,-3)
-
-// const geometry3 = new THREE.CapsuleGeometry( 1, 1, 2, 4 ); 
-// const material3 = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
-// const capsule = new THREE.Mesh( geometry3, material3 ); 
-// capsule.position.set(0,2.5,-2)
-// scene.add( capsule );
-
-
-
-
-// const geometry2 = new THREE.PlaneGeometry(40,40);
-// const material2 = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
-// const plane2 = new THREE.Mesh( geometry2, material2 );
-// plane2.rotation.x = Math.PI / 2
-// plane2.position.set(0,-0,0)
-
 
 document.addEventListener( 'keydown', ( event ) => {
 
@@ -143,11 +136,19 @@ container.addEventListener( 'mousedown', () => {
   document.body.requestPointerLock();
 
   mouseTime = performance.now();
+  
+  
 } );
 
 document.addEventListener( 'mouseup', () => {
 
-  triggerObjectEvent()
+  // triggerObjectEvent()
+  
+  // document.getElementById('buttonExit').addEventListener('click', ()=>{
+  //   console.log('hello')
+  //   // document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
+  //   // document.body.requestPointerLock() 
+  // })
 
 } );
 
@@ -159,17 +160,20 @@ function triggerObjectEvent() {
   if (intersects2.length > 0){
     document.getElementsByClassName('examplePopup')[0].classList.add('activePopup')
     document.exitPointerLock()
-
-
-
+    // document.body.getElementsByClassName('examplePopup').requestPointerLock()
   }
 
-  // document.getElementById('buttonExit').addEventListener('onclick', function(){
-  //   document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
-  //   document.body.requestPointerLock() 
-  // })
+  if (document.getElementsByClassName('examplePopup')[0].classList.contains('activePopup')){
+    
+    document.getElementById('buttonExit').addEventListener('click', ()=>{
+      console.log('Hello')
+    })
+  }
+
+
 
 }
+
 
 const rayCaster = new THREE.Raycaster();
 
@@ -189,69 +193,27 @@ document.body.addEventListener( 'mousemove', ( event ) => {
 
   rayCaster.setFromCamera(pointer,camera)
 
-  // const intersects = rayCaster.intersectObject(scene.children[3])
-  
-  // console.log(scene.children)
-
-  // if (intersects2.length > 0){
-
-  //   document.body.addEventListener('mousedown', () => {
-  //     let run = true
-
-  //     if (run) {
-  //       triggerObjectEvent()
-  //       run = false
-  //     }
-      
-  //   }, {once:true})
-  // }
 
   function applyOpac (){
 
     const intersects2 = rayCaster.intersectObject(scene.children[2])
 
     if (intersects2.length > 0){
+
       intersects2[0].object.material.transparent = true;
       intersects2[0].object.material.opacity = 0.5;
-    }
-  //   console.log(intersects2)
-
-  //   document.addEventListener('mousedown', () => {
-
-  //     if (intersects2.length > 0 && intersects2.object.name === 'Board') {
-  //       document.getElementsByClassName('examplePopup')[0].classList.add('activePopup')
-  //       document.exitPointerLock()
-  //     }
-
-  //     document.getElementById('buttonExit').addEventListener('click', function(){
-  //       document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
-  //       console.log('kjn')
-  //       document.body.requestPointerLock() 
-  //     })
-  //   },{useCapture: true})
-
-    
-
-    
-
-
-
-  //   // if (intersects2.length > 0){
-
-  //   //   intersects2[0].object.material.transparent = true;
-  //   //   intersects2[0].object.material.opacity = 0.5;
       
-  //   //   if (intersects2[0].object.name === 'Board'){
-  //   //     document.addEventListener('mousedown', function test() {
-  //         // document.getElementsByClassName('examplePopup')[0].classList.add('activePopup')
-  //         // document.exitPointerLock()
-  //   //     })
-  //       // document.getElementById('buttonExit').addEventListener('click', function(){
-  //       //   document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
-  //       //   document.body.requestPointerLock()
-  //   //     })
-  //   //   }
-  //   // }
+      if (intersects2[0].object.name === 'Board'){
+        document.addEventListener('mousedown', function test() {
+          document.getElementsByClassName('examplePopup')[0].classList.add('activePopup')
+          document.exitPointerLock()
+        })
+        document.getElementById('buttonExit').addEventListener('click', function(){
+          document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
+          document.body.requestPointerLock()
+        })
+      }
+    }
   }
 
 
@@ -280,6 +242,7 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
 
   renderer.setSize( window.innerWidth, window.innerHeight );
+  labelRenderer.setSize( window.innerWidth, window.innerHeight );
 
 }
 
@@ -393,7 +356,7 @@ function controls( deltaTime ) {
 
 const loader = new GLTFLoader();
 
-loader.load( '/assets/models/signTest.glb', ( gltf ) => {
+loader.load( '/assets/models/sign2.glb', ( gltf ) => {
 
   gltf.scene.name = 'Sign'
 
@@ -466,6 +429,8 @@ function animate() {
   }
 
   renderer.render( scene, camera );
+
+  labelRenderer.render( scene, camera);
 
   stats.update();
 

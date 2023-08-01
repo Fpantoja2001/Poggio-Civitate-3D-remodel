@@ -23,19 +23,12 @@
     <script src="https://unpkg.com/browse/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/kripken/ammo.js@HEAD/builds/ammo.wasm.js"></script>
     <script src="./main.js" type="module"></script>
-    <script>
-        function close(){
-            console.log('HEY')
-            document.getElementsByClassName('examplePopup')[0].classList.remove('activePopup')
-            document.body.requestPointerLock()
-        }
-    </script>
     <link rel="stylesheet" type="text/css" href="./styles.scss" />
     
     <div id="container">
         <div class="xhair"></div>
         <div class="examplePopup">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci eum inventore officiis id maiores saepe ipsum nemo a. Sapiente aliquam libero, quam dicta exercitationem nemo voluptates facere omnis earum iure?
-            <button id="buttonExit" onclick={close}>
+            <button id="buttonExit">
                 CLICK ME
             </button>
         </div>
