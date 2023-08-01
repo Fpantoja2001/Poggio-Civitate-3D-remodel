@@ -64,7 +64,7 @@ This program is hosted with gh-pages at the following [link](https://fpantoja200
 
 * Remake of viewing and movement module.
 * Remake of physics collision module.
-* Create flawless interaction module [[link]](https://www.youtube.com/watch?v=0ZW3xrFhY3w)[link1](https://www.youtube.com/watch?v=LsoidaI-8qQ).
+* Create flawless interaction module [[link]](https://www.youtube.com/watch?v=0ZW3xrFhY3w) [[link1]](https://www.youtube.com/watch?v=LsoidaI-8qQ).
 
 ## Things I've tried to do 
 * Implement a physics module with Cannon.js
