@@ -80,7 +80,7 @@ const labelRenderer = new CSS2DRenderer()
 labelRenderer.setSize(window.innerWidth,window.innerHeight)
 labelRenderer.domElement.style.position = 'absolute';
 labelRenderer.domElement.style.top = '0px';
-labelRenderer.domElement.style.pointerEvents = 'none';
+labelRenderer.domElement.style.pointerEvents = 'none';``
 document.body.appendChild(labelRenderer.domElement)
 
 
